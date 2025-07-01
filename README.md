@@ -64,6 +64,106 @@ sudo apt install gz-harmonic -y
 '''
 You can run it using:
 '''bash
+
+use nano Dockerfile (delet everything) and print
+'''bash 
+# Use Ubuntu 24.04 base image
+FROM ubuntu:24.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Setup locale
+RUN apt-get update && apt-get install -y locales && \
+    locale-gen en_US en_US.UTF-8 && update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
+
+# Install curl, gnupg, lsb-release, software-properties-common for repo setup
+RUN apt-get update && apt-get install -y curl gnupg2 lsb-release software-properties-common
+
+# Add ROS 2 apt repository
+RUN curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | apt-key add - && \
+    echo "deb http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros2.list
+
+# Install ROS 2 desktop, Gazebo ROS packages, and dependencies
+RUN apt-get update && apt-get install -y \
+    ros-jazzy-desktop \
+    ros-jazzy-gazebo-ros-pkgs \
+    python3-rosdep \
+    python3-colcon-common-extensions \
+    build-essential \
+    cmake \
+    git \
+    python3-pip \
+    sudo \
+    wget
+
+# Initialize rosdep
+RUN rosdep init || true
+RUN rosdep update
+
+# Setup entrypoint to source ROS 2 environment automatically
+SHELL ["/bin/bash", "-c"]
+RUN echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
+
+CMD ["/bin/bash"]
+
+'''
+Ctrl+0--> enter -->Ctrl+x
+
+then run
+'''bash
+docker build -t ros2-jazzy-gazebo .
+'''
+
+
 gz sim
 '''
 (if not running try using wifi ip--1st do this export DISPLAY=$(grep nameserver /etc/resolv.conf | awk '{print $2}'):0and then this-- export DISPLAY=//192.168.1.164:0//)
+
+To run (with GUI support, assuming X server is running on your host):
+'''bash
+docker run -it \
+    --env="DISPLAY" \
+    --env="QT_X11_NO_MITSHM=1" \
+    --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+    ros2-jazzy-gazebo
+'''
+
+then run sudo
+'''bash
+sudo apt update
+sudo apt search ros-noble-gazebo-ros-pkgs
+sudo apt search ros-jazzy-gazebo-ros-pkgs
+'''
+to get in docker
+'''bash
+docker run -it --rm \
+  -e DISPLAY=$DISPLAY \
+  -e QT_X11_NO_MITSHM=1 \
+  -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+  osrf/ros:humble-desktop
+'''
+
+this for launching turtle bot
+'''bash
+# 1. Install turtlebot3 simulation and dependencies
+apt update
+apt install -y ros-humble-turtlebot3-gazebo ros-humble-turtlebot3-msgs
+
+# 2. Set required environment variable
+echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
+export TURTLEBOT3_MODEL=burger
+
+# 3. Source ROS
+source /opt/ros/humble/setup.bash
+
+# 4. Try launching again
+ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
+...
+
+use this to launch the bot
+'''bash
+       source /opt/ros/humble/setup.bash
+       ros2 run teleop_twist_keyboard teleop_twist_keyboard
+'''
