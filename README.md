@@ -255,4 +255,23 @@ paste this:-'''
   <build_type>ament_python</build_type>
 </package>
 '''
+2. Build the workspace
+From inside the container:
 
+'''bash
+cd /root/ros2_ws
+colcon build
+'''
+
+Then source the environment:
+
+'''bash
+
+source install/setup.bash
+'''
+3. Run the node
+If your node script is correct (with main() function and publisher logic), run:
+
+'''bash
+ros2 run my_bot_controller move_bot
+'''
