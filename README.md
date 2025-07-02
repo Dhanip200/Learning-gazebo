@@ -168,3 +168,91 @@ use this to launch the bot
        source /opt/ros/humble/setup.bash
        ros2 run teleop_twist_keyboard teleop_twist_keyboard
 '''
+
+ADDING A Python File:-
+'''bash
+mkdir -p ~/ros2_ws/src/my_bot_controller/my_bot_controller
+cd ~/ros2_ws/src/my_bot_controller/my_bot_controller
+
+nano move_bot.py
+'''
+
+ Step 1: Create the destination path inside the container
+ '''bash
+ docker exec -it silly_turing mkdir -p /root/ros2_ws/src/my_bot_controller/my_bot_controller
+'''
+Step 2: Copy the file into the container
+'''bash
+docker cp ~/ros2_ws/src/my_bot_controller/my_bot_controller/move_bot.py silly_turing:/root/ros2_ws/src/my_bot_controller/my_bot_controller/
+'''
+
+go into the docker file :-
+'''bash
+docker exec -it silly_turing bash
+'''
+
+inside container go to this file:-
+'''bash
+cd /root/ros2_ws/src/my_bot_controller
+ '''
+
+ -->making a file
+ '''bash
+ touch setup.py
+ '''
+
+ ---> gettinginto the file(1st install nano with this :-apt update
+apt install nano):-
+'''bash
+ nano setup.py
+ '''
+ paste this :-
+ '''
+ # setup.py
+from setuptools import setup
+
+package_name = 'my_bot_controller'
+
+setup(
+    name=package_name,
+    version='0.0.0',
+    packages=[package_name],
+    install_requires=['setuptools'],
+    zip_safe=True,
+    maintainer='your_name',
+    maintainer_email='your_email@example.com',
+    description='Simple bot controller',
+    license='Apache License 2.0',
+    tests_require=['pytest'],
+    entry_points={
+        'console_scripts': [
+            'move_bot = my_bot_controller.move_bot:main',
+        ],
+    },
+)
+'''
+
+create this file:-
+'''bash
+touch package.xml
+nano package.xml
+'''
+paste this:-'''
+<?xml version="1.0"?>
+<package format="3">
+  <name>my_bot_controller</name>
+  <version>0.0.0</version>
+  <description>My TurtleBot3 Controller</description>
+  <maintainer email="you@example.com">Your Name</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+
+  <build_type>ament_python</build_type>
+</package>
+'''
+
