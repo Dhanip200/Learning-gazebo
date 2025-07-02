@@ -119,16 +119,16 @@ docker build -t ros2-jazzy-gazebo .
 
 gz sim
 '''
-(if not running try using wifi ip--1st do this export DISPLAY=$(grep nameserver /etc/resolv.conf | awk '{print $2}'):0and then this-- export DISPLAY=//192.168.1.164:0//)
+(if not running try using wifi ip--1st do this export DISPLAY=$(grep nameserver /etc/resolv.conf | awk '{print $2}'):0and then this-- export DISPLAY=//192.168.1.164:0//
 
-To run (with GUI support, assuming X server is running on your host):
+print this:-
 '''bash
-docker run -it \
-    --env="DISPLAY" \
-    --env="QT_X11_NO_MITSHM=1" \
-    --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
-    ros2-jazzy-gazebo
-'''
+docker run -it --rm \
+  -e DISPLAY=$DISPLAY \
+  -e QT_X11_NO_MITSHM=1 \
+  -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+  osrf/ros:humble-desktop
+  '''
 
 then run sudo
 '''bash
