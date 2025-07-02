@@ -119,8 +119,7 @@ docker build -t ros2-jazzy-gazebo .
 
 gz sim
 '''
-(if not running try using wifi ip--1st do this export DISPLAY=$(grep nameserver /etc/resolv.conf | awk '{print $2}'):0and then this-- export DISPLAY=//192.168.1.164:0//
-
+(if not running try using wifi ip--1st do this export DISPLAY=$(grep nameserver /etc/resolv.conf | awk '{print $2}'):0and then this-- export DISPLAY=//192.168.1.164:0//)
 print this:-
 '''bash
 docker run -it --rm \
@@ -136,14 +135,7 @@ sudo apt update
 sudo apt search ros-noble-gazebo-ros-pkgs
 sudo apt search ros-jazzy-gazebo-ros-pkgs
 '''
-to get in docker
-'''bash
-docker run -it --rm \
-  -e DISPLAY=$DISPLAY \
-  -e QT_X11_NO_MITSHM=1 \
-  -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
-  osrf/ros:humble-desktop
-'''
+
 
 this for launching turtle bot
 '''bash
@@ -161,7 +153,16 @@ source /opt/ros/humble/setup.bash
 # 4. Try launching again
 ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 ...
-
+---------------------------------------------------------
+to get in docker(in another wsl terminal)
+'''bash
+docker run -it --rm \
+  -e DISPLAY=$DISPLAY \
+  -e QT_X11_NO_MITSHM=1 \
+  -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+  osrf/ros:humble-desktop
+'''
+----------------------------------------------------------
 use this to launch the bot
 '''bash
        source /opt/ros/humble/setup.bash
