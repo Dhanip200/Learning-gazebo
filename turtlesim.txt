@@ -1,7 +1,7 @@
 I learned how to use turtlesim(a ros2 package good for learning) it was quite simple actually 
 1st i had to 1st install it using 
 sudo apt update ros2
-sudo apt ros2-humble-turtlesim
+sudo apt ros-humble-turtlesim
 
 --this is for seeing list:-
 ros2 pkg list
