@@ -29,3 +29,85 @@ it will show you your current nodes(running):
 input--/# ros2 node list
 output-- /teleop_turtle
 /turtlesim
+
+
+to see the info of the turtlesim:-
+ros2 node info /turtlesim
+
+input-- ros2 node info /turtlesim
+output--/turtlesim
+  Subscribers:
+    /parameter_events: rcl_interfaces/msg/ParameterEvent
+    /turtle1/cmd_vel: geometry_msgs/msg/Twist
+  Publishers:
+    /parameter_events: rcl_interfaces/msg/ParameterEvent
+    /rosout: rcl_interfaces/msg/Log
+    /turtle1/color_sensor: turtlesim/msg/Color
+    /turtle1/pose: turtlesim/msg/Pose
+  Service Servers:
+    /clear: std_srvs/srv/Empty
+    /kill: turtlesim/srv/Kill
+    /reset: std_srvs/srv/Empty
+    /spawn: turtlesim/srv/Spawn
+    /turtle1/set_pen: turtlesim/srv/SetPen
+    /turtle1/teleport_absolute: turtlesim/srv/TeleportAbsolute
+    /turtle1/teleport_relative: turtlesim/srv/TeleportRelative
+    /turtlesim/describe_parameters: rcl_interfaces/srv/DescribeParameters
+    /turtlesim/get_parameter_types: rcl_interfaces/srv/GetParameterTypes
+    /turtlesim/get_parameters: rcl_interfaces/srv/GetParameters
+    /turtlesim/list_parameters: rcl_interfaces/srv/ListParameters
+    /turtlesim/set_parameters: rcl_interfaces/srv/SetParameters
+    /turtlesim/set_parameters_atomically: rcl_interfaces/srv/SetParametersAtomically
+  Service Clients:
+
+  Action Servers:
+    /turtle1/rotate_absolute: turtlesim/action/RotateAbsolute
+  Action Clients:
+
+
+Then i learned about topics:-
+topics is something wich connects nodes
+there are publisher nodes and there are subscriber node
+
+
+for listing out the topics
+ros2 topic list
+
+now if u run rqt_graph
+u will see a well... rqt graph
+(i assumes that it is simmiler to AFSM-diagrams).
+
+for seening specific outputs we can run :
+
+ros2 topic echo /turtle1/cmd_vel
+
+input-- ros2 topic echo /turtle1/cmd_vel
+output--linear:
+  x: 2.0
+  y: 0.0
+  z: 0.0
+angular:
+  x: 0.0
+  y: 0.0
+  z: 0.0
+
+to get the info
+root@9cc8a1919a42:/# ros2 topic info /turtle1/cmd_vel
+Type: geometry_msgs/msg/Twist
+Publisher count: 1
+Subscription count: 2
+
+to see interface defination:-
+ros2 interface show geometry_msgs/msg/Twist
+
+input--root@9cc8a1919a42:/# ros2 interface show  geometry_msgs/msg/Twist
+output--# This expresses velocity in free space broken into its linear and angular parts.
+
+Vector3  linear
+        float64 x
+        float64 y
+        float64 z
+Vector3  angular
+        float64 x
+        float64 y
+        float64 z
