@@ -159,3 +159,26 @@ ros2 topic hz /turtle1/pose
 Then i learned about services:-
 Services are like server and client
 Server needs to respond to send data
+
+this is for services list:-
+ ros2 service list
+this is for type associated:-
+ros2 service list-t
+
+root@88b3b07d2a0a:/# ros2 service find std_srvs/srv/Empty
+/clear
+/reset
+root@88b3b07d2a0a:/# ros2 interface show turtlesim/srv/spawn
+Could not find the interface '/opt/ros/humble/share/turtlesim/srv/spawn.idl'
+root@88b3b07d2a0a:/# ros2 interface show turtlesim/srv/Spawn
+float32 x
+float32 y
+float32 theta
+string name # Optional.  A unique name will be created and returned if this is empty
+---
+string name
+
+this is for clearing the screen lines:-
+ros2 service call /clear std_srvs/srv/Empty
+
+
