@@ -111,3 +111,12 @@ Vector3  angular
         float64 x
         float64 y
         float64 z
+for info :
+ros2 topic info turtle1/cmd_vel
+
+root@2805c4a8871e:/# ros2 topic info /turtle1/cmd_vel
+Type: geometry_msgs/msg/Twist
+Publisher count: 1
+Subscription count: 1
+
+for publishing the topic:-
