@@ -119,4 +119,16 @@ Type: geometry_msgs/msg/Twist
 Publisher count: 1
 Subscription count: 1
 
+root@2805c4a8871e:/# ros2 interface show  geometry_msgs/msg/Twist
+# This expresses velocity in free space broken into its linear and angular parts.
+
+Vector3  linear
+        float64 x
+        float64 y
+        float64 z
+Vector3  angular
+        float64 x
+        float64 y
+        float64 z
+
 for publishing the topic:-
