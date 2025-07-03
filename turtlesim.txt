@@ -132,3 +132,7 @@ Vector3  angular
         float64 z
 
 for publishing the topic:-
+input root@2805c4a8871e:/# ros2 topic pub --once /turtle1/cmd_vel  geometry_msgs/msg/Twist "{linear: {x: 0.0,y: 0.0,z: 0.0},an
+gular: {x: 0.0,y: 0.0,z: 0.0}}"
+output-publisher: beginning loop
+publishing #1: geometry_msgs.msg.Twist(linear=geometry_msgs.msg.Vector3(x=0.0, y=0.0, z=0.0), angular=geometry_msgs.msg.Vector3(x=0.0, y=0.0, z=0.0))
