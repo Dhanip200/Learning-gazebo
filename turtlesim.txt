@@ -1,0 +1,31 @@
+I learned how to use turtlesim(a ros2 package good for learning) it was quite simple actually 
+1st i had to 1st install it using 
+sudo apt update ros2
+sudo apt ros2-humble-turtlesim
+
+--this is for seeing list:-
+ros2 pkg list
+
+--to see exectutabe files--
+ros2 pkg executables
+
+--specific executables for turtlesim
+ ros2 pkg executables turtlesim
+
+--ok to launch it use 
+ros2 run turtlesim turtlesim_node
+
+--run this :- to control your turtle
+ros2 run turtlesim turtle_teleop_key
+
+then i learned that ros workes in nodes so here is something about nodes:-
+for help:-
+ros2 node-h
+
+for list :-
+ros2 node list
+
+it will show you your current nodes(running):
+input--/# ros2 node list
+output-- /teleop_turtle
+/turtlesim
