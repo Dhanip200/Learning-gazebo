@@ -157,3 +157,5 @@ this is for seeing the value:-
 ros2 topic hz /turtle1/pose
 
 Then i learned about services:-
+Services are like server and client
+Server needs to respond to send data
