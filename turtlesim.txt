@@ -181,4 +181,5 @@ string name
 this is for clearing the screen lines:-
 ros2 service call /clear std_srvs/srv/Empty
 
-
+This is for getting a new turtle:-
+ros2 service call /spawn turtlesim/srv/Spawn "{x: 2, y: 3, theta: 0.2,name: ''}"
