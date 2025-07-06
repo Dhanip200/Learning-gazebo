@@ -254,3 +254,5 @@ Create workspace and navigate to the workspace:-
 Adding some-source code in order to find the 
 Adding some source code to our folder to test building:-
 git clone https://github.com/ros/ros_tutorials.git -b humble
+Setup colcon tab complition:-
+echo "source /usr/sshare/colcon_argcomplete/hook/colcon-argcomplete.bash" >> ~/.bashrc
