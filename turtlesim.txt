@@ -259,3 +259,7 @@ echo "source /usr/sshare/colcon_argcomplete/hook/colcon-argcomplete.bash" >> ~/.
 
 Now we are going to build dictioneries instead of making copies:-
  colcon build --symlink-install
+(ls shows content of the folder)
+
+To source the folder(to ren packages we build):-
+ colcon build --symlink-install
