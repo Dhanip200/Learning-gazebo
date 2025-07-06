@@ -186,4 +186,15 @@ ros2 service call /spawn turtlesim/srv/Spawn "{x: 2, y: 3, theta: 0.2,name: ''}"
 
 After that i learned about parameters:-
 parameters are like input for the functions but for nodes:--
+For seeing the parameters:-
+ros2 param list
+
+running this will give u a parameter integer value:-
+ ros2 param get /turtlesim background_b
+and with the help of this we can change the value
+ros2 param set /turtlesim background_b 745
+it shows all parameters:-
+ ros2 param dump /turtlesim
+In order to store these parametes in a yaml file it will be:-
+
 
