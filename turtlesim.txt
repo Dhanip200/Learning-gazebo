@@ -201,3 +201,6 @@ In order to lode the parameters we use:-
 ros2 param load /turtlesim turtlesim.yaml
 to load param on startup:-(this is literally make a new window..):-
  ros2 run turtlesim turtlesim_node --ros-args --params-file turtlesim.yaml
+
+Then i learned the Actions:-
+It has a node(server) and node(Client) but has a gole feedback and results.
