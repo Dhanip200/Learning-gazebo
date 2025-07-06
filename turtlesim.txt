@@ -240,3 +240,11 @@ Sending Action goles:-
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ROS Workshop:--- We are making our own packages:---
+we have a workspace:--
+we will have build install and log folders under that file:-
+
+COLCON build tool:
+it is a Commond line tool to build our packages.
+
+to install colcon:
+ sudo apt install python3-colcon-common-extensions
