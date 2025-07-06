@@ -202,5 +202,36 @@ ros2 param load /turtlesim turtlesim.yaml
 to load param on startup:-(this is literally make a new window..):-
  ros2 run turtlesim turtlesim_node --ros-args --params-file turtlesim.yaml
 
+
 Then i learned the Actions:-
 It has a node(server) and node(Client) but has a gole feedback and results.
+This is how u get the info about the node:-
+ros2 node info /teleop_turtle
+
+For getting the list of action:-
+ros2 action list
+
+to get action on server and client side we use:-
+ ros2 action info /turtle1/rotate_absolute
+
+for seeing interface:-
+ ros2 interface show turtlesim/action/RotateAbsolute
+
+output:-Action: /turtle1/rotate_absolute
+Action clients: 1
+    /teleop_turtle
+Action servers: 1
+    /turtlesim
+root@06eef2ba6a2a:/# ros2 interface show turtlesim/action/RotateAbsolute
+# The desired heading in radians
+float32 theta
+---
+# The angular displacement in radians to the starting position
+float32 delta
+---
+# The remaining rotation in radians
+float32 remaining
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Sending Action goles:-
+ ros2 action send_goal /turtle1/rotate_absolute turtlesim/action/RotateAbsolute "{theta:1.57}"
