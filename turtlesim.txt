@@ -248,3 +248,9 @@ it is a Commond line tool to build our packages.
 
 to install colcon:
  sudo apt install python3-colcon-common-extensions
+
+Create workspace and navigate to the workspace:-
+ mkdir -p ~/ros2_ws/src && cd ~/ros2_ws
+Adding some-source code in order to find the 
+Adding some source code to our folder to test building:-
+git clone https://github.com/ros/ros_tutorials.git -b humble
