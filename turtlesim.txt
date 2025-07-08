@@ -263,3 +263,20 @@ Now we are going to build dictioneries instead of making copies:-
 
 To source the folder(to ren packages we build):-
  colcon build --symlink-install
+
+To create packages:-
+mkdir -p ~/ros2_ws/src
+ cd ~/ros2_ws
+ros2 pkg create --build-type ament_cmake --node-name my_node my_package
+
+then we do this:-
+ source install/local_setup.bash
+
+this is hello world program:-
+ros2 run my_package my_node
+
+
+NOW we will be building our own publisher and subscriber:-
+C++ edition:-
+for making the package:-
+ ros2 pkg create --build-type ament_cmake cpp_pubsub
