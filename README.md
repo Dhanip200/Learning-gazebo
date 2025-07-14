@@ -275,3 +275,24 @@ If your node script is correct (with main() function and publisher logic), run:
 '''bash
 ros2 run my_bot_controller move_bot
 '''
+----------------------------------------------------------------------------------------------------------------------python package publishing-------------------------------------------------------------------------------------------------------------------------------
+Installing colcon:-
+'''bash
+sudo apt install python3-colcon-common-extensions
+'''
+
+Navigating to our folder:-
+'''bash
+cd ~/ros2_ws/src
+'''
+
+Creating Commonds:-
+'''bash
+ros2 pkg create --build-type ament_python py_pubsub
+'''
+
+Making publisher and subscriber files inside py_pubsub inside py_pubsub:-
+'''bash
+cd ~/ros2_ws/src/py_pubsub/py_pubsub
+touch publisher_member_function.py subscriber_member_function.py
+'''
