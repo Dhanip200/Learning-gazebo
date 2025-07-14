@@ -446,3 +446,8 @@ for setup.py:-
     },
 )
 ''''''''''''''''''''''''''''''''''''''''
+
+Installing Dependencies:-(for running ther above things):-
+'''bash
+rosdep install -i --from-path src --rosdistro humble -y
+'''
