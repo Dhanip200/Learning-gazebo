@@ -451,3 +451,7 @@ Installing Dependencies:-(for running ther above things):-
 '''bash
 rosdep install -i --from-path src --rosdistro humble -y
 '''
+Build colcon from ros2_ws:-
+'''bash
+colcon build --packages-select py-pubsub
+'''
