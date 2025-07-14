@@ -453,5 +453,5 @@ rosdep install -i --from-path src --rosdistro humble -y
 '''
 Build colcon from ros2_ws:-
 '''bash
-colcon build --packages-select py-pubsub
+colcon build --packages-select py_pubsub
 '''
