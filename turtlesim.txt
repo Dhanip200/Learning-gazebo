@@ -449,6 +449,7 @@ for setup.py:-
 
 Installing Dependencies:-(for running ther above things):-
 '''bash
+ cd ~/ros2_ws
 rosdep install -i --from-path src --rosdistro humble -y
 '''
 Build colcon from ros2_ws:-
