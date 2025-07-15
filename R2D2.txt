@@ -118,3 +118,18 @@ OPTIONAL
 </collision>
 
 
+We will create a folder called urdf inside ros_ws:-
+1st we will install the files for tutorial:-
+'''bash
+sudo apt update
+sudo apt install ros-humble-urdf-tutorial
+'''
+them we will use this commond in order to see the files:-
+'''bash
+ls /opt/ros/humble/share/urdf_tutorial/urdf/
+'''
+(in my case it looks like this but u should choose accordingly:---01-myfirst.urdf
+02-multipleshapes.urdf
+03-origins.urdf
+...
+):-
