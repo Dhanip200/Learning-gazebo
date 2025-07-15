@@ -70,3 +70,17 @@ box--<box size="x y
 sphere--<sphere radius="r"/>
 cylinder--<cylinder radius="r" length="1"/>
 mesh--<mesh filename="file_path" scale="x y z"/>
+
+
+
+Origin - rpy and xyz
+The origin is used to define the rotation [radians] using roll (x), pitch (y), yaw (z) and the translation [meters) using x, y, z relative to the link's coordinate frame. The order of rotation for rpy is ZYX, so first rotate about X axis, then Y axis and finally Z axis. The rotation operation is applied first and then the translation.
+For visual and collision, origin describes how the geometry is transformed relative to the link's frame.
+For inertial, origin describes the location of the center of mass relative to the link's frame.
+<origin rpy="r py" xyz="x y z"/>
+Axis Colors:
+Axis
+Color
+X-Red
+Y-Green
+Z-Blue
