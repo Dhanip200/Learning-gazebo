@@ -172,3 +172,10 @@ Limit
 Limits are for revolute and prismatic joints only. The lower and upper field are in radians or meters respectively, the effort is the max effort in [Nm], and velocity is max velocity [rad/s).
 <limit lower="lower" upper="upper" effort="max_effort"
 velocity="max_vel"/>
+
+
+After this we will run the joint example:-
+so...
+'''bash
+
+'''
