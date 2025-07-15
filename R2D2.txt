@@ -57,3 +57,16 @@ General Structure of a <link>:---
 
 </link>
 
+
+
+Types of Geometries used in URDF File
+Units for the geometries are in Sl units, so meters for all lengths. For the mesh, the files types can be .stl or .dae files
+<geometry>
+<!-- Geometry Specific Code
+</geometry>
+Geometry
+Geometry Specific Code
+box--<box size="x y
+sphere--<sphere radius="r"/>
+cylinder--<cylinder radius="r" length="1"/>
+mesh--<mesh filename="file_path" scale="x y z"/>
