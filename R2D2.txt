@@ -84,3 +84,23 @@ Color
 X-Red
 Y-Green
 Z-Blue
+
+
+Material
+The material is used to define the colors and the transparency of the color by using rgba, normalized between 0 and 1.
+<material name="color_name">
+<color rgba="rg ba"/>
+</material>
+Some common colors:
+color_name
+rgba
+red
+1001
+green
+0101
+blue
+0011
+yellow
+1101
+cyan
+0111
