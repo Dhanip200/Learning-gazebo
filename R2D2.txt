@@ -119,6 +119,27 @@ OPTIONAL
 
 
 We will create a folder called urdf inside ros_ws:-
+1st step is connectin to our wifi properly and server so do this:-
+'''bash
+export DISPLAY=:0
+'''
+then run this:-
+'''bash
+sudo apt update
+
+sudo apt install -y \
+  libxcb-xinerama0 \
+  libxkbcommon-x11-0 \
+  libglu1-mesa \
+  libxrender1 \
+  libxrandr2 \
+  libxi6 \
+  libsm6 \
+  libxext6 \
+  x11-apps
+'''
+
+
 1st we will install the files for tutorial:-
 '''bash
 sudo apt update
@@ -133,3 +154,7 @@ ls /opt/ros/humble/share/urdf_tutorial/urdf/
 03-origins.urdf
 ...
 ):-
+'''bash
+ros2 launch urdf_tutorial display.launch.py model:=urdf/01-myfirst.urdf
+'''
+(it will show u a cylander).
