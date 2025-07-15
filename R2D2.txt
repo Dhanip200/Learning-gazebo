@@ -1,0 +1,59 @@
+So the fromat of a launche file is:-ros2 launch <package_name><launch_file>
+eg ros2 launch gazebo_tutorial gazebo.launch.py
+
+Now we will be making an R2D2 usimg the links and stuff:-
+typical structure is <?xml version="1.0"?>
+  <robot name="robot_name">
+  <link name="link_name">
+    <visual>
+    </visual>
+
+    <collision>
+    </collision>
+
+    <inirtial>
+    </inirtial>
+</link>
+
+<joint name="joint_name"...>
+  <axis .../>
+  <parant link .../>
+  <child link .../>
+  <origin ...>
+  </joint>
+</robot>
+
+
+General Structure of a <link>:---
+<link name="link_name">
+
+  <!-- Visual element (OPTIONAL) -->
+  <visual>
+    <geometry> <!-- REQUIRED -->
+      <!-- Geometry-specific tags go here -->
+    </geometry>
+    
+    <origin rpy="r p y" xyz="x y z"/> <!-- OPTIONAL -->
+    <material name="color_name"/>    <!-- OPTIONAL -->
+  </visual>
+
+  <!-- Collision element (OPTIONAL) -->
+  <collision>
+    <geometry> <!-- REQUIRED -->
+      <!-- Geometry-specific tags go here -->
+    </geometry>
+    
+    <origin rpy="r p y" xyz="x y z"/> <!-- OPTIONAL -->
+  </collision>
+
+  <!-- Inertial element (OPTIONAL) -->
+  <inertial>
+    <mass value="mass_in_kg"/>
+    <inertia
+      ixx="ixx" ixy="ixy" ixz="ixz"
+      iyy="iyy" iyz="iyz"
+      izz="izz"/>
+  </inertial>
+
+</link>
+
