@@ -104,3 +104,15 @@ yellow
 1101
 cyan
 0111
+
+
+
+Collision
+The collision property can be used to describe a bounding shape around the link for collision detection. Usually, people use a simplified shape for this for faster calculation when detecting for collisions between other collision bounding shapes.
+<collision> <!-- OPTIONAL -->
+<geometry> <!-- REQUIRED -->
+<!-- Geometry Specific Code -->
+</geometry>
+<origin rpy="r py" xyz="x y z"/> <!--
+OPTIONAL
+</collision>
