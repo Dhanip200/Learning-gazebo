@@ -387,7 +387,7 @@ if __name__ == '__main__':
     main()
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Then we have to update package.xml and setup.py:---
+Then do cd .. we have to update package.xml and setup.py:---
 for package.xml:----
 '''nano
 <?xml version="1.0"?>
