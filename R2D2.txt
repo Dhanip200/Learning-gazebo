@@ -158,3 +158,17 @@ ls /opt/ros/humble/share/urdf_tutorial/urdf/
 ros2 launch urdf_tutorial display.launch.py model:=urdf/01-myfirst.urdf
 '''
 (it will show u a cylander).
+
+
+
+Origin and Axis
+The origin describes the location of the child frame relative to the parent frame. The axis describes the axis of rotation for the joint.
+<origin rpy="r py" xyz="x y z"/>
+<axis rpy="r py" xyz="x y z"/>
+Dynamics
+The dyanamics include damping expressed in [Ns/m] and friction (static friction) expressed in [N].
+<dynamics damping="damp_coef" friction="fric_coef"/>
+Limit
+Limits are for revolute and prismatic joints only. The lower and upper field are in radians or meters respectively, the effort is the max effort in [Nm], and velocity is max velocity [rad/s).
+<limit lower="lower" upper="upper" effort="max_effort"
+velocity="max_vel"/>
