@@ -3,3 +3,47 @@ URDF stands for unfied robotics discription format it is a .xml file
 
 
 A good video= https://youtu.be/CwdbsvcpOHM?si=HOH6Wuu8uBsMl30_
+
+
+to run the tutorial files you should run this:=-
+downlode them:-
+apt update
+apt install -y ros-humble-urdf-tutorial
+
+
+
+Option 1: Clone ros2 branch (most likely the one compatible with Humble)
+bash
+Copy
+Edit
+cd ~/ros2_ws/src
+git clone https://github.com/ros/urdf_tutorial.git -b ros2
+Option 2: Clone default branch and check available branches
+bash
+Copy
+Edit
+cd ~/ros2_ws/src
+git clone https://github.com/ros/urdf_tutorial.git
+cd urdf_tutorial
+git branch -a
+This will list available branches like:
+
+bash
+Copy
+Edit
+remotes/origin/ros2
+remotes/origin/foxy-devel
+remotes/origin/noetic-devel
+For ROS 2 Humble, the ros2 or foxy-devel branch is generally compatible.
+
+Additional Tip
+After cloning:
+
+bash
+Copy
+Edit
+cd ~/ros2_ws
+colcon build
+source install/setup.bash
+
+
