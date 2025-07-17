@@ -1,2 +1,5 @@
 URDF files are ways to tell discription of our robot.
 URDF stands for unfied robotics discription format it is a .xml file
+
+
+https://youtu.be/CwdbsvcpOHM?si=HOH6Wuu8uBsMl30_
