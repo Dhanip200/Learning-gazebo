@@ -1,0 +1,28 @@
+For running it is VS-code:-----
+Try this:
+
+bash
+Copy
+Edit
+docker run -it \
+  --env DISPLAY=172.28.0.1:0.0 \
+  --env QT_X11_NO_MITSHM=1 \
+  --volume /tmp/.X11-unix:/tmp/.X11-unix:rw \
+  osrf/ros:humble-desktop
+You can also use other tags like foxy-desktop, iron-desktop, etc.
+
+After it starts, try:
+
+bash
+Copy
+Edit
+gazebo
+# or
+ros2 run turtlesim turtlesim_node
+If gazebo isn’t installed, you can install it inside the container:
+
+bash
+Copy
+Edit
+apt update
+apt install gazebo ros-humble-gazebo-ros-pkgs
