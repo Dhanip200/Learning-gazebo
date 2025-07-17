@@ -4,3 +4,12 @@ RVIZ is a visua;lization tool which can
 cd ~/ros2_ws/src
 ros2 pkg create --build-type ament_python --license Apache-2.0 urdf_tutorial_r2d2 --dependencies rclpy
 
+
+RVIZ Configuration Summary
+The.../urdf/r2d2.rviz file can be used to configure your rviz settings so you don't have to re-add the plugin and update settings each time. Otherwise, if you wanted the RobotModel you need to do Add > rviz_default_plugins > RobotModel.
+Global Options
+Fixed Frame: odom
+RobotModel
+Description Topic: /robot_description
+TF
+
