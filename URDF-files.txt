@@ -47,3 +47,38 @@ colcon build
 source install/setup.bash
 
 
+🔧 1. Confirm Build
+If you haven't already built the workspace:
+
+bash
+Copy
+Edit
+cd ~/ros2_ws
+colcon build
+source install/setup.bash
+📁 2. Explore the package
+Let's list the contents of the tutorial:
+
+bash
+Copy
+Edit
+ls src/urdf_tutorial
+You’ll find example URDF files under urdf/ and possibly launch files under launch/.
+
+▶️ 3. Run the First URDF Example
+Assuming you're using Gazebo and RViz, try launching the first example:
+
+bash
+Copy
+Edit
+ros2 launch urdf_tutorial display.launch.py model:=urdf/01-myfirst.urdf
+If that doesn’t work, try this instead (as some versions place the URDF under urdf/01-myfirst.urdf.xacro):
+
+bash
+Copy
+Edit
+ros2 launch urdf_tutorial display.launch.py model:=urdf/01-myfirst.urdf.xacro
+🧪 4. What this does
+This command runs RViz to visualize a basic URDF robot.
+
+The model:=... part tells the launch file which URDF to load.
