@@ -1,1 +1,6 @@
 RVIZ is a visua;lization tool which can
+
+1st step is creating packages using this command:-
+cd ~/ros2_ws/src
+ros2 pkg create --build-type ament_python--license Apache-2.0 urdf_tutorial_r2d2 --dependencies rclpy
+
