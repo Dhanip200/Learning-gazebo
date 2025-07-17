@@ -1,0 +1,5 @@
+Xacro files allow ypu to creare functions wich u can call in the URDF files
+How to run xacro files... 
+
+Xacro files::-
+xacro model.xacro > model.urdf
