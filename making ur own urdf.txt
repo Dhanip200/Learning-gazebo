@@ -1,0 +1,72 @@
+📁 1. Create a new URDF file
+Inside the existing urdf_tutorial/urdf/ directory:
+
+bash
+Copy
+Edit
+cd ~/ros2_ws/src/urdf_tutorial/urdf/
+touch my_robot.urdf
+✏️ 2. Example: A Simple Robot with 2 Links and 1 Revolute Joint
+Paste this into my_robot.urdf:
+
+xml
+Copy
+Edit
+<?xml version="1.0"?>
+<robot name="my_robot">
+
+  <!-- Link 1 (Base) -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.5 0.5 0.1"/>
+      </geometry>
+      <origin xyz="0 0 0.05"/>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- Link 2 (Arm) -->
+  <link name="arm_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.5" radius="0.05"/>
+      </geometry>
+      <origin xyz="0 0 0.25" rpy="0 0 0"/>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- Revolute Joint between base_link and arm_link -->
+  <joint name="base_to_arm" type="revolute">
+    <parent link="base_link"/>
+    <child link="arm_link"/>
+    <origin xyz="0 0 0.1" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="1"/>
+  </joint>
+
+</robot>
+▶️ 3. Launch it using RViz
+bash
+Copy
+Edit
+ros2 launch urdf_tutorial display.launch.py model:=urdf/my_robot.urdf
+🧩 4. Add Joint Control (optional)
+To move the joint, run:
+
+bash
+Copy
+Edit
+ros2 run joint_state_publisher_gui joint_state_publisher_gui &
+ros2 run robot_state_publisher robot_state_publisher urdf/my_robot.urdf
+rviz2
+Then:
+
+In RViz, add RobotModel and TF
+
+Use the GUI to move your joint!
