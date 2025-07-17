@@ -3,3 +3,24 @@ How to run xacro files...
 
 Xacro files::-
 xacro model.xacro > model.urdf
+
+
+2. Robot State Publisher
+Use the robot_state_publisher to read the .urdf file (converted from a .xacro file) in a launch file. Run the xacro command to convert the .xacro to a .urdf, and pass it as the robot_description parameter.
+from launch_ros.actions import Node
+from launch.substitutions import Command
+from launch_ros.parameter_descriptions import ParameterValue
+
+path_to_urdf = 'path/to/your_robot.urdf.xacro'
+
+robot_state_publisher_node = Node(
+    package='robot_state_publisher',
+    executable='robot_state_publisher',
+    parameters=[{
+        'robot_description': ParameterValue(
+            Command(['xacro', path_to_urdf]),
+            value_type=str
+        )
+    }]
+)
+
