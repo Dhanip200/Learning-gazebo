@@ -1,3 +1,15 @@
+To get back inside your running container and continue working:
+Run this on your host terminal (not inside Docker):
+
+docker exec -it happy_margulis /bin/bash
+or equivalently:
+
+docker exec -it 26e18ba9a446 /bin/bash
+
+
+
+
+
 # Learning-gazebo
 Hi I am Dhanip Modi an Aspiring robotics and AI enginner i am learning how to use ros and gazebo. This is muy attemp in learning gazebo and ros
 I launched WSl and in that installed gazebo (currently running on docker).
